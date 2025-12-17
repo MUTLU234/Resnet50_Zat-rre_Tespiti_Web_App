@@ -122,5 +122,7 @@ Doktor Modu aktif edildiğinde, Grad-CAM algoritması devreye girer ve modelin "
 
 ## 👥 İletişim
 
-**Geliştirici:** Nurettin Mutlu Tüver/ 251137142
-**Ders:** Üretken Yapay Zeka (Midterm Assignment)
+* **Geliştirici:** Nurettin Mutlu Tüver
+* **Kurum:** Fırat Üniversitesi
+
+
