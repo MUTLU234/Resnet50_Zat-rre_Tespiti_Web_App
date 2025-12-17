@@ -32,7 +32,7 @@ Modelin "Kara Kutu" (Black Box) olmasını engellemek için **Grad-CAM (Gradient
 
 ## 📊 Eğitim Süreci ve Sonuçlar
 
-Model eğitim süreci, **Google Colab (T4 GPU)** ortamında gerçekleştirilmiştir. Eğitim sürecine ait detaylar `Zaturre_Egitim_Sonuclari.ipynb` dosyasında mevcuttur.
+Model eğitim süreci, **Google Colab (T4 GPU)** ortamında gerçekleştirilmiştir.  Eğitim sürecine ait detaylar `Zaturre_Egitim_Sonuclari. ipynb` dosyasında mevcuttur.
 
 *   **Veri Seti:** Kaggle Chest X-Ray Images (Pneumonia)
     *   Eğitim Verisi: 5,216 Görüntü
@@ -48,26 +48,26 @@ Model eğitim süreci, **Google Colab (T4 GPU)** ortamında gerçekleştirilmiş
 Eğitim sürecinde elde edilen Epoch bazlı başarı oranları aşağıdaki gibidir:
 
 | Epoch | Kayıp (Loss) | Doğruluk (Accuracy) |
-| :---: | :---: | :---: |
+| : ---: | :---: | : ---: |
 | 1 | 0.1943 | **%93.23** |
 | 2 | 0.1262 | **%95.44** |
 | 3 | 0.1007 | **%96.41** |
 
-> **Analiz:** Model sadece 3 Epoch sonunda %96.41 gibi yüksek bir doğruluk oranına ulaşmıştır. Loss değerindeki istikrarlı düşüş, modelin veriyi başarılı bir şekilde öğrendiğini (Overfitting olmadan) kanıtlamaktadır.
+> **Analiz:** Model sadece 3 Epoch sonunda %96.41 gibi yüksek bir doğruluk oranına ulaşmıştır. Loss değerindeki istikrarlı düşüş, modelin veriyi başarılı bir şekilde öğrendiğini (Overfitting olmadan) göstermektedir.
 
 ---
 
 ## 🚀 Kurulum ve Kullanım
 
-Proje tamamen Dockerize edilmiştir, bu sayede tek bir komutla herhangi bir ortamda çalıştırılabilir.
+Proje tamamen Dockerize edilmiştir, bu sayede tek bir komutla herhangi bir ortamda çalıştırılabilir. 
 
 ### A. Docker ile Çalıştırma (Önerilen)
 
 Terminal veya PowerShell üzerinden aşağıdaki komutları uygulayınız:
 
-1.  **İmajı İndirin:**
+1.   **İmajı İndirin:**
     ```bash
-    docker pull mutlutuver/zaturre-tespiti:latest
+    docker pull mutlutuver/zaturre-tespiti: latest
     ```
 
 2.  **Uygulamayı Başlatın:**
@@ -75,52 +75,136 @@ Terminal veya PowerShell üzerinden aşağıdaki komutları uygulayınız:
     docker run -p 8501:8501 mutlutuver/zaturre-tespiti:latest
     ```
 
-3.  **Erişim:** Tarayıcınızda `http://localhost:8501` adresine gidin.
+3.  **Erişim:** Tarayıcınızda `http://localhost:8501` adresine gidin. 
 
 ### B. Uygulama Özellikleri
 
-1.  **Resim Yükleme:** `.jpg` veya `.png` formatındaki röntgen görüntsünü sisteme yükleyin.
+1.  **Resim Yükleme:** `.jpg` veya `.png` formatındaki röntgen görüntüsünü sisteme yükleyin. 
 2.  **Otomatik Teşhis:** Sistem anlık olarak "Normal" veya "Zatürre" sonucunu Güven Skoru ile birlikte verir.
-3.  **Doktor Modu (XAI):** Sonuç ekranında **"Isı Haritasını Göster"** kutucuğunu işaretleyerek modelin odaklandığı patolojik bölgeleri inceleyebilirsiniz.
+3.  **Doktor Modu (XAI):** Sonuç ekranında **"Isı Haritasını Göster"** kutucuğunu işaretleyerek modelin odaklandığı patolojik bölgeleri inceleyebilirsiniz. 
 
+---
 
-### 📸 Uygulama Ekran Görüntüleri ve Kullanım Adımları
+## 📸 Uygulama Ekran Görüntüleri ve Kullanım Adımları
 
-**1. Başlangıç Ekranı**
-Uygulama ilk açıldığında kullanıcıyı karşılayan modern ve sade arayüz. Kullanıcı buradan analiz sürecini başlatır.
-![Başlangıç Ekranı](Üretken_Yapay _Zeka_AraSınav_Görevi/images/analiz_sonucu.png)
+### 1. Başlangıç Ekranı
+Uygulama ilk açıldığında kullanıcıyı karşılayan modern ve sade arayüz.  Kullanıcı buradan analiz sürecini başlatır.
 
-**2. Örnek Veri (Girdi)**
-Analiz edilmek üzere sisteme yüklenecek olan Zaire (Pnömoni) şüphesi taşıyan akciğer röntgen görüntüsü.
-![Örnek Girdi](Üretken_Yapay _Zeka_AraSınav_Görevi/images/zature2.png)
+![Başlangıç Ekranı](Üretken_Yapay%20_Zeka_AraSınav_Görevi/images/analiz_sonucu.png)
 
-**3. Teşhis ve Güven Skoru**
+### 2. Örnek Veri (Girdi)
+Analiz edilmek üzere sisteme yüklenecek olan Zatürre (Pnömoni) şüphesi taşıyan akciğer röntgen görüntüsü.
+
+![Örnek Girdi](Üretken_Yapay%20_Zeka_AraSınav_Görevi/images/zature2.png)
+
+### 3. Teşhis ve Güven Skoru
 Görsel sisteme yüklendikten hemen sonra yapay zeka modelinin tahmin sonucu (Zatürre/Normal) ve %90'ın üzerindeki güven skoru ekrana yansır.
-![Tahmin Sonucu](Üretken_Yapay _Zeka_AraSınav_Görevi/images/siteye_gorsel_yukleme.PNG)
 
-**4. Açıklanabilir Yapay Zeka (XAI - Isı Haritası)**
+![Tahmin Sonucu](Üretken_Yapay%20_Zeka_AraSınav_Görevi/images/siteye_gorsel_yukleme.PNG)
+
+### 4. Açıklanabilir Yapay Zeka (XAI - Isı Haritası)
 Doktor Modu aktif edildiğinde, Grad-CAM algoritması devreye girer ve modelin "Zatürre" kararı verirken akciğerin hangi bölgesine odaklandığını kırmızı/sıcak renklerle gösterir.
-![Isı Haritası](Üretken_Yapay _Zeka_AraSınav_Görevi/images/XAI_heatmap.PNG)
+
+![Isı Haritası](Üretken_Yapay%20_Zeka_AraSınav_Görevi/images/XAI_heatmap.PNG)
 
 ---
 
 ## 📁 Proje Yapısı
 
 ```
-.
-├── Dockerfile              # Konteyner konfigürasyonu
-├── gereksinimler.txt       # Python kütüphane bağımlılıkları
-├── uygulama/
-│   ├── ana_uygulama.py     # Streamlit arayüz kodları
-│   ├── model_islemleri.py  # Model yükleme, tahmin ve Grad-CAM fonksiyonları
-│   └── zaturre_modeli.pth  # Eğitilen model dosyası (Weights)
-├── Zaturre_Egitim_Sonuclari.ipynb  # Eğitim kodları ve grafik sonuçları
-└── README.md               # Proje dokümantasyonu
+Resnet50_Zat-rre_Tespiti_Web_App/
+│
+├── Dockerfile                              # Konteyner konfigürasyonu
+├── gereksinimler.txt                       # Python kütüphane bağımlılıkları
+├── README.md                               # Ana proje dokümantasyonu (bu dosya)
+│
+├── uygulama/                               # Ana uygulama dizini
+│   ├── ana_uygulama.py                     # Streamlit arayüz kodları
+│   ├── model_islemleri.py                  # Model yükleme, tahmin ve Grad-CAM fonksiyonları
+│   └── zaturre_modeli.pth                  # Eğitilen model dosyası (Weights)
+│
+├── Üretken_Yapay _Zeka_AraSınav_Görevi/    # Proje detayları ve görseller
+│   ├── images/                             # Uygulama ekran görüntüleri
+│   │   ├── analiz_sonucu.png
+│   │   ├── zature2.png
+│   │   ├── siteye_gorsel_yukleme.PNG
+│   │   └── XAI_heatmap.PNG
+│   └── Zaturre_Egitim_Sonuclari.ipynb      # Model eğitim kodları ve sonuçları
+│
+└── . dockerignore                           # Docker için hariç tutulacak dosyalar
 ```
 
 ---
 
-## 👥 İletişim
+## 🔬 Teknik Detaylar
 
-**Geliştirici:** Nurettin Mutlu Tüver/ 251137142
-**Ders:** Üretken Yapay Zeka (Midterm Assignment)
+### Kullanılan Teknolojiler
+- **Programlama Dili:** Python 3.9+
+- **Deep Learning Framework:** PyTorch
+- **Web Framework:** Streamlit
+- **Görselleştirme:** Matplotlib, OpenCV, Grad-CAM
+- **Konteynerizasyon:** Docker
+- **Model Mimarisi:** ResNet50 (Transfer Learning)
+- **XAI Yöntemi:** Gradient-weighted Class Activation Mapping (Grad-CAM)
+
+### Bağımlılıklar
+Tüm gerekli Python kütüphaneleri `gereksinimler.txt` dosyasında tanımlanmıştır: 
+- torch
+- torchvision
+- streamlit
+- Pillow
+- numpy
+- opencv-python
+- matplotlib
+
+---
+
+## 🎯 Proje Hedefleri ve Kazanımlar
+
+### Hedefler
+✅ Yüksek doğrulukta (%96+) zatürre tespiti  
+✅ Açıklanabilir yapay zeka entegrasyonu (Grad-CAM)  
+✅ Kullanıcı dostu web arayüzü  
+✅ Dockerize edilmiş, taşınabilir mimari  
+✅ Radyoloji uzmanlarına karar destek sistemi
+
+### Öğrenilen Kavramlar
+- Transfer Learning ve Fine-Tuning teknikleri
+- Residual Networks (ResNet) mimarisi
+- Tıbbi görüntü işleme ve sınıflandırma
+- Explainable AI (XAI) ve Grad-CAM
+- Docker konteynerizasyon
+- Streamlit ile web uygulaması geliştirme
+
+---
+
+## 📝 Lisans
+
+Bu proje MIT Lisansı altında lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakınız.
+
+---
+
+## 👥 Geliştirici ve İletişim
+
+**Geliştirici:** Nurettin Mutlu Tüver  
+**Docker Hub:** [mutlutuver/zaturre-tespiti](https://hub.docker.com/r/mutlutuver/zaturre-tespiti)
+
+---
+
+## 🙏 Teşekkürler
+
+Bu proje, Kaggle'daki "Chest X-Ray Images (Pneumonia)" veri setini kullanan açık kaynak topluluğunun katkılarıyla geliştirilmiştir. 
+
+**Veri Seti Kaynağı:** [Kaggle - Chest X-Ray Images](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia)
+
+---
+
+## 📚 Referanslar
+
+1. He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition.  CVPR. 
+2. Selvaraju, R. R., et al. (2017). Grad-CAM: Visual explanations from deep networks via gradient-based localization. ICCV.
+3. Kermany, D.  S., et al. (2018). Identifying medical diagnoses and treatable diseases by image-based deep learning.  Cell. 
+
+---
+
+**⭐ Bu projeyi beğendiyseniz, lütfen GitHub'da yıldız vermeyi unutmayın! **
