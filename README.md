@@ -88,19 +88,19 @@ Terminal veya PowerShell üzerinden aşağıdaki komutları uygulayınız:
 
 **1. Başlangıç Ekranı**
 Uygulama ilk açıldığında kullanıcıyı karşılayan modern ve sade arayüz. Kullanıcı buradan analiz sürecini başlatır.
-![Başlangıç Ekranı](../images/analiz_sonucu.png)
+![Başlangıç Ekranı](Üretken_Yapay _Zeka_AraSınav_Görevi/images/analiz_sonucu.png)
 
 **2. Örnek Veri (Girdi)**
 Analiz edilmek üzere sisteme yüklenecek olan Zaire (Pnömoni) şüphesi taşıyan akciğer röntgen görüntüsü.
-![Örnek Girdi](images/zature2.png)
+![Örnek Girdi](Üretken_Yapay _Zeka_AraSınav_Görevi/images/zature2.png)
 
 **3. Teşhis ve Güven Skoru**
 Görsel sisteme yüklendikten hemen sonra yapay zeka modelinin tahmin sonucu (Zatürre/Normal) ve %90'ın üzerindeki güven skoru ekrana yansır.
-![Tahmin Sonucu](images/siteye_gorsel_yukleme.PNG)
+![Tahmin Sonucu](Üretken_Yapay _Zeka_AraSınav_Görevi/images/siteye_gorsel_yukleme.PNG)
 
 **4. Açıklanabilir Yapay Zeka (XAI - Isı Haritası)**
 Doktor Modu aktif edildiğinde, Grad-CAM algoritması devreye girer ve modelin "Zatürre" kararı verirken akciğerin hangi bölgesine odaklandığını kırmızı/sıcak renklerle gösterir.
-![Isı Haritası](images/XAI_heatmap.PNG)
+![Isı Haritası](Üretken_Yapay _Zeka_AraSınav_Görevi/images/XAI_heatmap.PNG)
 
 ---
 
