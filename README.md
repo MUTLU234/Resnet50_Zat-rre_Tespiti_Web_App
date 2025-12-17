@@ -1,0 +1,1 @@
+# Resnet50_Zat-rre_Tespiti_Web_App
