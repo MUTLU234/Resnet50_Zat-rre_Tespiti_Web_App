@@ -88,7 +88,7 @@ Terminal veya PowerShell üzerinden aşağıdaki komutları uygulayınız:
 
 **1. Başlangıç Ekranı**
 Uygulama ilk açıldığında kullanıcıyı karşılayan modern ve sade arayüz. Kullanıcı buradan analiz sürecini başlatır.
-![Başlangıç Ekranı](images/analiz_sonucu.png)
+![Başlangıç Ekranı](../images/analiz_sonucu.png)
 
 **2. Örnek Veri (Girdi)**
 Analiz edilmek üzere sisteme yüklenecek olan Zaire (Pnömoni) şüphesi taşıyan akciğer röntgen görüntüsü.
